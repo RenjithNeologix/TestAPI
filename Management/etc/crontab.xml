@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="erply_product_sync">  <!-- Doesn't need to be unique -->
+        <job name="cron_erply_product" instance="Erply\Management\Controller\Product\Index" method="execute">
+            <!-- Every minute -->
+            <!--<schedule>*/1 * * * *</schedule>-->
+            <config_path>management/cron/schedule</config_path>
+        </job>
+        <job name="cron_erply_category" instance="Erply\Management\Controller\Category\Index" method="execute">
+            <!-- Every minute -->
+            <!--<schedule>*/1 * * * *</schedule>-->
+            <config_path>management/cron/category_schedule</config_path>
+        </job>
+        <job name="cron_erply_customer" instance="Erply\Management\Controller\Index\Index" method="execute">
+            <!-- Every minute -->
+            <!--<schedule>*/1 * * * *</schedule>-->
+            <config_path>management/cron/customer_schedule</config_path>
+        </job>
+        <job name="cron_erply_order" instance="Erply\Management\Controller\Order\Index" method="execute">
+            <!-- Every minute -->
+            <!--<schedule>*/1 * * * *</schedule>-->
+            <config_path>management/cron/order_schedule</config_path>
+        </job>
+    </group>
+</config>
